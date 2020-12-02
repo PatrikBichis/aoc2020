@@ -10,10 +10,10 @@ namespace aoc2020
             Console.WriteLine("---------------------------");
             Console.WriteLine(Environment.NewLine);
 
-            new Day1_1(InputType.Input).Run().Print();
-            new Day1_2(InputType.Input).Run().Print();
+            //new Day1_1(InputType.Input).Run().Print();
+            //new Day1_2(InputType.Input).Run().Print();
             //new Day2_1(InputType.Input).Run().Print();
-            //new Day2_2(InputType.Input).Run().Print();
+            new Day2_2(InputType.Input).Run().Print();
             //new Day3_1(InputType.Input).Run().Print();
             //new Day3_2(InputType.Input).Run().Print();
 
