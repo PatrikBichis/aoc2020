@@ -20,7 +20,7 @@ namespace aoc2020
             Console.WriteLine(DecodingSeatId("FFFBBBFRRR ").ToString());
             Console.WriteLine(DecodingSeatId("BBFFBBFRLL ").ToString());
 
-            foreach(var line in Input)
+            foreach (var line in Input)
             {
                 seatIds.Add(DecodingSeatId(line));
             }
@@ -30,7 +30,8 @@ namespace aoc2020
             return this;
         }
 
-        private int DecodingSeatId(string boardingPass){
+        private int DecodingSeatId(string boardingPass)
+        {
             var seatId = -1;
             var chars = boardingPass.Trim().ToCharArray();
             var range = 64;
@@ -41,17 +42,22 @@ namespace aoc2020
             var colUp = 7;
             var colLo = 0;
 
-            for(int i=0; i<7; i++){
-                if(i<6){
-                    if(chars[i] == 'F') {
+            for (int i = 0; i < 7; i++)
+            {
+                if (i < 6)
+                {
+                    if (chars[i] == 'F')
+                    {
                         rowUp = rowUp - range;
                     }
                     else if (chars[i] == 'B')
                     {
                         rowLo = rowLo + range;
                     }
-                } else {
-                    if(chars[i]=='F')
+                }
+                else
+                {
+                    if (chars[i] == 'F')
                         row = rowLo;
                     else if (chars[i] == 'B')
                         row = rowUp;
@@ -80,7 +86,7 @@ namespace aoc2020
                 {
                     if (chars[i] == 'L')
                         col = colLo;
-                    else if(chars[i] == 'R')
+                    else if (chars[i] == 'R')
                         col = colUp;
                 }
                 range = range / 2;
@@ -92,6 +98,5 @@ namespace aoc2020
 
             return seatId;
         }
-
     }
 }
