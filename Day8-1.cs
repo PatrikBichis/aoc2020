@@ -28,7 +28,7 @@ namespace aoc2020
             var prgPointer = 0;
             var accumulator = 0;
 
-            while (!prg.All(x => x.HasExecuted == true) && prgPointer >= prg.Count)
+            while (!prg.All(x => x.HasExecuted == true) && prgPointer < prg.Count)
             {
                 var opCode = prg[prgPointer].OpCode;
                 var arg = prg[prgPointer].Arg;
