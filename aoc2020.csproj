@@ -52,7 +52,7 @@
     <None Update="Input\7-test.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Input\8-Input.txt">
+    <None Update="Input\8-input.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Input\8-test.txt">
