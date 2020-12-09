@@ -15,11 +15,17 @@ namespace aoc2020
 
         private int _inputId = 0;
         private int _partId = 0;
+        private InputType _type;
+        public InputType Type
+        {
+            get { return _type; }
+        }
 
         public PuzzelBase(InputType test, int inputId, int partId)
         {
             _inputId = inputId;
             _partId = partId;
+            _type = test;
 
             if (test == InputType.Input)
             {

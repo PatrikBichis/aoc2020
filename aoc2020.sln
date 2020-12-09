@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30711.63
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "aoc2020", "aoc2020.csproj", "{CEB602F2-6399-456C-ABC8-594E9DF786E4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "aoc2020", "aoc2020\aoc2020.csproj", "{CEB602F2-6399-456C-ABC8-594E9DF786E4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "aoc.helper", "aoc.helper\aoc.helper.csproj", "{76EC8A51-3BDD-4213-9121-97C3360AB6EE}"
 EndProject

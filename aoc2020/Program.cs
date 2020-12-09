@@ -6,7 +6,7 @@ namespace aoc2020
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Starting to solve puzzel..");
+            Console.WriteLine("Starting to solve puzzle..");
             Console.WriteLine("---------------------------");
             Console.WriteLine(Environment.NewLine);
 
@@ -26,12 +26,10 @@ namespace aoc2020
             //new Day7_2(InputType.Input).Run().Print();
             //new Day8_1(InputType.Input).Run().Print();
             //new Day8_2(InputType.Input).Run().Print();
-            //new Day9_1(InputType.TestInput).Run().Print();
-            //new Day9_2(InputType.TestInput).Run().Print();
-
-            new Day10_1(InputType.TestInput).Run().Print();
-            new Day10_2(InputType.TestInput).Run().Print();
-
+            new Day9_1(InputType.Input).Run().Print();
+            new Day9_2(InputType.Input).Run().Print();
+            //new Day10_1(InputType.TestInput).Run().Print();
+            //new Day10_2(InputType.TestInput).Run().Print();
             //new Day11_1(InputType.TestInput).Run().Print();
             //new Day11_2(InputType.TestInput).Run().Print();
             //new Day12_1(InputType.TestInput).Run().Print();
