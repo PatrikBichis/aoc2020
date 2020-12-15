@@ -26,11 +26,11 @@ namespace aoc2020
             //new Day7_2(InputType.Input).Run().Print();
             //new Day8_1(InputType.Input).Run().Print();
             //new Day8_2(InputType.Input).Run().Print();
-            new Day9_1(InputType.Input).Run().Print();
-            new Day9_2(InputType.Input).Run().Print();
-            //new Day10_1(InputType.TestInput).Run().Print();
+            //new Day9_1(InputType.Input).Run().Print();
+            //new Day9_2(InputType.Input).Run().Print();
+            //new Day10_1(InputType.Input).Run().Print();
             //new Day10_2(InputType.TestInput).Run().Print();
-            //new Day11_1(InputType.TestInput).Run().Print();
+            //new Day11_1(InputType.Input).Run().Print();
             //new Day11_2(InputType.TestInput).Run().Print();
             //new Day12_1(InputType.TestInput).Run().Print();
             //new Day12_2(InputType.TestInput).Run().Print();
@@ -38,8 +38,8 @@ namespace aoc2020
             //new Day13_2(InputType.TestInput).Run().Print();
             //new Day14_1(InputType.TestInput).Run().Print();
             //new Day14_2(InputType.TestInput).Run().Print();
-            //new Day15_1(InputType.TestInput).Run().Print();
-            //new Day15_2(InputType.TestInput).Run().Print();
+            new Day15_1(InputType.TestInput).Run().Print();
+            new Day15_2(InputType.TestInput).Run().Print();
             //new Day16_1(InputType.TestInput).Run().Print();
             //new Day16_2(InputType.TestInput).Run().Print();
             //new Day17_1(InputType.TestInput).Run().Print();

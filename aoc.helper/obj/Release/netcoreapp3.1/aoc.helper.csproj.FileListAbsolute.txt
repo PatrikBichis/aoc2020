@@ -1,0 +1,13 @@
+C:\Source\PatrikBichis\aoc20\aoc.helper\bin\Release\netcoreapp3.1\aoc.helper.exe
+C:\Source\PatrikBichis\aoc20\aoc.helper\bin\Release\netcoreapp3.1\aoc.helper.deps.json
+C:\Source\PatrikBichis\aoc20\aoc.helper\bin\Release\netcoreapp3.1\aoc.helper.runtimeconfig.json
+C:\Source\PatrikBichis\aoc20\aoc.helper\bin\Release\netcoreapp3.1\aoc.helper.runtimeconfig.dev.json
+C:\Source\PatrikBichis\aoc20\aoc.helper\bin\Release\netcoreapp3.1\aoc.helper.dll
+C:\Source\PatrikBichis\aoc20\aoc.helper\bin\Release\netcoreapp3.1\aoc.helper.pdb
+C:\Source\PatrikBichis\aoc20\aoc.helper\obj\Release\netcoreapp3.1\aoc.helper.csprojAssemblyReference.cache
+C:\Source\PatrikBichis\aoc20\aoc.helper\obj\Release\netcoreapp3.1\aoc.helper.AssemblyInfoInputs.cache
+C:\Source\PatrikBichis\aoc20\aoc.helper\obj\Release\netcoreapp3.1\aoc.helper.AssemblyInfo.cs
+C:\Source\PatrikBichis\aoc20\aoc.helper\obj\Release\netcoreapp3.1\aoc.helper.csproj.CoreCompileInputs.cache
+C:\Source\PatrikBichis\aoc20\aoc.helper\obj\Release\netcoreapp3.1\aoc.helper.dll
+C:\Source\PatrikBichis\aoc20\aoc.helper\obj\Release\netcoreapp3.1\aoc.helper.pdb
+C:\Source\PatrikBichis\aoc20\aoc.helper\obj\Release\netcoreapp3.1\aoc.helper.genruntimeconfig.cache
