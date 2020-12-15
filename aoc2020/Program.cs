@@ -38,8 +38,8 @@ namespace aoc2020
             //new Day13_2(InputType.TestInput).Run().Print();
             //new Day14_1(InputType.TestInput).Run().Print();
             //new Day14_2(InputType.TestInput).Run().Print();
-            new Day15_1(InputType.TestInput).Run().Print();
-            new Day15_2(InputType.TestInput).Run().Print();
+            new Day15_1(InputType.Input).Run().Print();
+            new Day15_2(InputType.Input).Run().Print();
             //new Day16_1(InputType.TestInput).Run().Print();
             //new Day16_2(InputType.TestInput).Run().Print();
             //new Day17_1(InputType.TestInput).Run().Print();
