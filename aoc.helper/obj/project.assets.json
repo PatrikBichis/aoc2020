@@ -8,23 +8,23 @@
     ".NETCoreApp,Version=v3.1": []
   },
   "packageFolders": {
-    "C:\\Users\\pabi\\.nuget\\packages\\": {},
+    "C:\\Users\\rdp\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Source\\PatrikBichis\\aoc20\\aoc.helper\\aoc.helper.csproj",
+      "projectUniqueName": "C:\\Users\\rdp\\Documents\\GitHub\\aoc2020\\aoc.helper\\aoc.helper.csproj",
       "projectName": "aoc.helper",
-      "projectPath": "C:\\Source\\PatrikBichis\\aoc20\\aoc.helper\\aoc.helper.csproj",
-      "packagesPath": "C:\\Users\\pabi\\.nuget\\packages\\",
-      "outputPath": "C:\\Source\\PatrikBichis\\aoc20\\aoc.helper\\obj\\",
+      "projectPath": "C:\\Users\\rdp\\Documents\\GitHub\\aoc2020\\aoc.helper\\aoc.helper.csproj",
+      "packagesPath": "C:\\Users\\rdp\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\rdp\\Documents\\GitHub\\aoc2020\\aoc.helper\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\pabi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\rdp\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "LV8Z6yJo9RC4xxjU9E8C7rgH9/ULOx+3Vm5OU4/LJQ+6FsO6VxIJSQtcDsouO/tiDbeiwts7nHHhuAoPYrQ1qA==",
+  "dgSpecHash": "HvV2lPwcz4Q8JK0o/T1cpMcaPqea/13yTSI3TbHB1pnbBoVCzwZg90vq9jbGpaAIJ95Bo3NwkBIpDJTYzSJzog==",
   "success": true,
-  "projectFilePath": "C:\\Source\\PatrikBichis\\aoc20\\aoc.helper\\aoc.helper.csproj",
+  "projectFilePath": "C:\\Users\\rdp\\Documents\\GitHub\\aoc2020\\aoc.helper\\aoc.helper.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
