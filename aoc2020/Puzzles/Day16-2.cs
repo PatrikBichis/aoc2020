@@ -16,29 +16,102 @@ namespace aoc2020
 
         public IPuzzel Run()
         {
-            var ranges = new List<Ranges>();
-            var _class = new Ranges();
-            var _row = new Ranges();
-            var _seat = new Ranges();
+            var fields = new List<Field>();
+            var _class = new Field();
+            var _row = new Field();
+            var _seat = new Field();
             var tickets = new List<Ticket>();
             var ticketValues = new List<int>();
             var notValidValues = new List<int>();
 
-            ExtractDataFromInput(ref ranges, ref tickets);
+            ExtractDataFromInput(ref fields, ref tickets);
 
-            FindNonValidTickets(ref tickets, ranges);
+            FindNonValidTickets(ref tickets, fields);
 
-            Answer = tickets.Where(x=>x.IsValid == false).Sum(x=>x.NonValidValues.Sum()).ToString();
+            var columns = FindColumnIndexes(tickets.Where(x => x.IsValid).ToList(), fields);
+
+            var myTicket = tickets.First(x => x.IsMyTicket);
+            var a1 = (double) myTicket.Values[columns.First(x => x.Field == "departure location").Index];
+            var a2 = (double) myTicket.Values[columns.First(x => x.Field == "departure station").Index];
+            var a3 = (double) myTicket.Values[columns.First(x => x.Field == "departure platform").Index];
+            var a4 = (double) myTicket.Values[columns.First(x => x.Field == "departure track").Index];
+            var a5 = (double) myTicket.Values[columns.First(x => x.Field == "departure date").Index];
+            var a6 = (double) myTicket.Values[columns.First(x => x.Field == "departure time").Index];
+
+            Answer = (a1 * a2 * a3 * a4 * a5 * a6).ToString();
 
             return this;
         }
 
-        private void FindColumnIndex(List<Ranges> ranges, List<Ticket> tickets)
+        private List<Column> FindColumnIndexes(List<Ticket> tickets, List<Field> fields)
         {
-            var values = new List<int>();
+            var columns = new List<Column>();
+            foreach (var field in fields)
+            {
+                for (int i = 0; i < tickets[0].Values.Count(); i++)
+                {
+                    // Extract field value from all tickets
+                    var values = new List<int>();
+                    foreach (var ticket in tickets)
+                    {
+                        values.Add(ticket.Values[i]);
+                    }
+
+                    // Test if all values is in range for the column
+                    var ok = true;
+                    foreach (var v in values)
+                    {
+                        if (!field.IsValuesInRange(v))
+                        {
+                            ok = false;
+                            break;
+                        }
+                    }
+
+                    // All tickts value for a column is valid for this field
+                    if (ok)
+                    {
+                        columns.Add(new Column { Index = i, Field = field.Name });
+                    }
+                  
+                }
+            }
+
+            // Clean to find right columns
+            while (columns.Count() > fields.Count())
+            {
+                for (var i = 0; i< fields.Count(); i++)
+                {
+                    var columsWithIndex = columns.Where(x => x.Index == i && x.Found == false);
+                    foreach(var c in columsWithIndex)
+                    {
+                        if(columns.Count(x=>x.Field == c.Field) == 1)
+                        {
+                            var single = c;
+                            c.Found = true;
+
+                            foreach(var r in columns.Where(x=>x.Index == c.Index).ToList())
+                            {
+                                if (!r.Found)
+                                {
+                                    columns.Remove(r);
+                                }
+                            }
+                            break;
+                        }
+                    }
+                }
+            }
+            /*
+            foreach(var column in indexes)
+            {
+                Console.WriteLine("{0};{1};", column.Field, column.Index);
+            }*/
+
+            return columns;
         }
 
-        private void FindNonValidTickets(ref List<Ticket> tickets, List<Ranges> ranges)
+        private void FindNonValidTickets(ref List<Ticket> tickets, List<Field> fields)
         {
             // Find all non valid tickets
             foreach (var ticket in tickets)
@@ -46,10 +119,10 @@ namespace aoc2020
                 foreach (var i in ticket.Values)
                 {
                     var index = 0;
-                    var ok1 = ranges[0].IsValuesInRange(i);
-                    var ok2 = ranges[1].IsValuesInRange(i);
-                    var ok3 = ranges[2].IsValuesInRange(i);
-                    if (ranges.All(x=>x.IsValuesInRange(i) == false))
+                    var ok1 = fields[0].IsValuesInRange(i);
+                    var ok2 = fields[1].IsValuesInRange(i);
+                    var ok3 = fields[2].IsValuesInRange(i);
+                    if (fields.All(x=>x.IsValuesInRange(i) == false))
                     {
                         ticket.IsValid = false;
                         ticket.NonValidValues.Add(i);
@@ -60,7 +133,7 @@ namespace aoc2020
             }
         }
 
-        private void ExtractDataFromInput(ref List<Ranges> ranges, ref List<Ticket> tickets)
+        private void ExtractDataFromInput(ref List<Field> fields, ref List<Ticket> tickets)
         {
             var yourTicketSeactions = false;
             var ticketSection = false;
@@ -71,9 +144,9 @@ namespace aoc2020
                 {
                     if(!line.Contains("your ticket") && !line.Contains("nearby tickets") && !yourTicketSeactions && !ticketSection)
                     {
-                        var r = new Ranges();
+                        var r = new Field();
                         ExtractRules(ref r, line);
-                        ranges.Add(r);
+                        fields.Add(r);
                     }
 
                     if (ticketSection)
@@ -111,7 +184,7 @@ namespace aoc2020
             }
         }
 
-        private void ExtractRules(ref Ranges list, string line)
+        private void ExtractRules(ref Field list, string line)
         {
             var parts = line.Split(':');
             var ranges = parts[1].Split("or");
@@ -124,11 +197,19 @@ namespace aoc2020
                 var range = new Range(parts[0]);
                 range.Lower = int.Parse(limits[0]);
                 range.Upper = int.Parse(limits[1]);
-                list.Values.Add(range);
+                list.Ranges.Add(range);
             }
         }
     }
 
+    class Column
+    {
+        public int Index { get; set; } = 0;
+
+        public string Field { get; set; } = "";
+
+        public bool Found { get; set; } = false;
+    }
 
     class Ticket
     {

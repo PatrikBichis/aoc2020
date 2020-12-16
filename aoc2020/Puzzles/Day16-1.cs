@@ -16,9 +16,9 @@ namespace aoc2020
 
         public IPuzzel Run()
         {
-            var _class = new Ranges();
-            var _row = new Ranges();
-            var _seat = new Ranges();
+            var _class = new Field();
+            var _row = new Field();
+            var _seat = new Field();
             var ticketValues = new List<int>();
             var notValidValues = new List<int>();
 
@@ -36,7 +36,7 @@ namespace aoc2020
             return this;
         }
 
-        private void ExtractDataFromInput(ref Ranges _class, ref Ranges _row, ref Ranges _seat, ref List<int> values)
+        private void ExtractDataFromInput(ref Field _class, ref Field _row, ref Field _seat, ref List<int> values)
         {
             var yourTicketSeactions = false;
             var ticketSection = false;
@@ -64,12 +64,12 @@ namespace aoc2020
             }
         }
 
-        private void ExtractRules(ref Ranges list, string line)
+        private void ExtractRules(ref Field field, string line)
         {
             var parts = line.Split(':');
             var ranges = parts[1].Split("or");
 
-            list.Name = parts[0];
+            field.Name = parts[0];
 
             foreach (var r in ranges)
             {
@@ -77,25 +77,25 @@ namespace aoc2020
                 var range = new Range(parts[0]);
                 range.Lower = int.Parse(limits[0]);
                 range.Upper = int.Parse(limits[1]);
-                list.Values.Add(range);
+                field.Ranges.Add(range);
             }
         }
     }
 
-    class Ranges
+    class Field
     {
-        public Ranges(string name = "N/A")
+        public Field(string name = "N/A")
         {
             Name = name;
         }
 
         public string Name { get; set; }
 
-        public List<Range> Values { get; set; } = new List<Range>();
+        public List<Range> Ranges { get; set; } = new List<Range>();
 
         public bool IsValuesInRange(int value)
         {
-            var ok = Values.Any(x => x.IsInRange(value));
+            var ok = Ranges.Any(x => x.IsInRange(value));
             return ok;
         }
     }
