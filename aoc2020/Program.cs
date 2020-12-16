@@ -32,7 +32,7 @@ namespace aoc2020
             //new Day10_2(InputType.TestInput).Run().Print();
             //new Day11_1(InputType.Input).Run().Print();
             //new Day11_2(InputType.TestInput).Run().Print();
-            //new Day12_1(InputType.Input).Run().Print();
+            new Day12_1(InputType.Input).Run().Print();
             //new Day12_2(InputType.TestInput).Run().Print();
             //new Day13_1(InputType.TestInput).Run().Print();
             //new Day13_2(InputType.TestInput).Run().Print();
@@ -41,7 +41,7 @@ namespace aoc2020
             //new Day15_1(InputType.Input).Run().Print();
             //new Day15_2(InputType.Input).Run().Print();
             new Day16_1(InputType.Input).Run().Print();
-            new Day16_2(InputType.TestInput).Run().Print();
+            new Day16_2(InputType.Input).Run().Print();
             //new Day17_1(InputType.TestInput).Run().Print();
             //new Day17_2(InputType.TestInput).Run().Print();
             //new Day18_1(InputType.TestInput).Run().Print();

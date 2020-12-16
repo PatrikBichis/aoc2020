@@ -33,23 +33,26 @@ namespace aoc2020
                 var cmd = line.Substring(0, 1);
                 var value = int.Parse(line.Substring(1, line.Length-1));
 
-                direction = Turn(cmd, value, direction);
-
-                if (direction == 0 && cmd == "F")
+                
+                if(cmd == "R" || cmd == "L")
                 {
-                    Forward(ref east, ref west, value);
+                    direction = Turn(cmd, value, direction);
+                }
+                else if (direction == 0 && cmd == "F")
+                {
+                    east += value;
                 }
                 else if(direction == 1 && cmd == "F")
                 {
-                    Forward(ref south, ref north, value);
+                    south += value;
                 }
                 else if (direction == 2 && cmd == "F")
                 {
-                    Forward(ref west, ref east, value);
+                    west += value;
                 }
                 else if (direction == 3 && cmd == "F")
                 {
-                    Forward(ref north, ref south, value);
+                    north += value;
                 }
                 else if (cmd == "E")
                 {
@@ -57,11 +60,11 @@ namespace aoc2020
                 }
                 else if (cmd == "S")
                 {
-                    north -= value;
+                    south += value;
                 }
                 else if (cmd == "W")
                 {
-                    east -= value;
+                    west += value;
                 }
                 else if (cmd == "N")
                 {
@@ -69,37 +72,110 @@ namespace aoc2020
                 }
             }
 
-            Answer = ((east + west) + (north + south)).ToString();
+            Answer = (Math.Abs(east - west) + Math.Abs(north - south)).ToString();
 
            return this;
        }
 
-        private void Forward(ref int fwd, ref int bwd, int value)
-        {
-            if (value - bwd > 0)
-            {
-                fwd = value - bwd;
-                bwd = 0;
-            }
-            else bwd -= value;
-        }
-
+        //           /\ 
+        //          north 3
+        // <- west 2        east 0 ->
+        //          south 1
+        //           \/
         private int Turn(string cmd, int value, int direction)
         {
             if (cmd == "R" || cmd == "L")
             {
                 if (cmd == "R" && value == 90)
-                    return direction += 1;
+                {
+                    var d = direction + 1;
+                    if (d > 3)
+                    {
+                        if (d == 4)
+                            return 0;
+                        if (d == 5)
+                            return 1;
+                        if (d == 6)
+                            return 2;
+                    }
+
+                    return d;
+                }
                 if (cmd == "R" && value == 180)
-                    return direction += 2;
+                {
+                    var d = direction + 2;
+                    if (d > 3)
+                    {
+                        if (d == 4)
+                            return 0;
+                        if (d == 5)
+                            return 1;
+                        if (d == 6)
+                            return 2;
+                    }
+
+                    return d;
+                }
                 if (cmd == "R" && value == 270)
-                    return direction += 3;
+                {
+                    var d = direction + 3;
+                    if (d > 3)
+                    {
+                        if (d == 4)
+                            return 0;
+                        if (d == 5)
+                            return 1;
+                        if (d == 6)
+                            return 2;
+                    }
+
+                    return d;
+                }
                 if (cmd == "L" && value == 90)
-                    return direction -= 1;
+                {
+                    var d = direction - 1;
+                    if(d<0)
+                    {
+                        if (d == -3)
+                            return 1;
+                        if (d == -2)
+                            return 2;
+                        if (d == -1)
+                            return 3;
+                    }
+                    else
+                        return d;
+                }
                 if (cmd == "L" && value == 180)
-                    return direction -= 2;
+                {
+                    var d = direction - 2;
+                    if (d < 0)
+                    {
+                        if (d == -3)
+                            return 1;
+                        if (d == -2)
+                            return 2;
+                        if (d == -1)
+                            return 3;
+                    }
+                    else
+                        return d;
+                }
                 if (cmd == "L" && value == 270)
-                    return direction -= 3;
+                {
+                    var d = direction - 3;
+                    if (d < 0)
+                    {
+                        if (d == -3)
+                            return 1;
+                        if (d == -2)
+                            return 2;
+                        if (d == -1)
+                            return 3;
+                    }
+                    else
+                        return d;
+                }
             }
 
             return direction;
